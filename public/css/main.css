@@ -1,0 +1,83 @@
+body {
+    background-color: black;
+    font-family: Courier New, Courier, monospace;
+    color: darkorange;
+}
+
+table h1 {
+    margin-top: 25px;
+    margin-bottom: 0px;
+    text-shadow: 1px 1px greenyellow;
+}
+
+a {
+    text-decoration: none;
+    color: darkorange;
+}
+
+a:hover {
+    font-weight: bolder;
+    color: greenyellow;
+    text-shadow: .5px .5px darkorange;
+}
+
+table {
+    width: 50%;
+    table-layout: fixed;
+    color: darkorange;
+    border-collapse: separate;
+}
+
+
+td {
+    word-wrap: break-word;
+}
+
+tr:nth-child(even) {
+    background: darkslategray;
+}
+
+.links {
+    background: black;
+}
+
+.links div {
+     margin-bottom: 12px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+form input {
+    width: 100%;
+    margin-top: 5px;
+}
+
+form textarea {
+    width: 100%;
+    margin-top: 5px;
+}
+
+#submit {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.content h1 {
+    text-align: center;
+    text-shadow: 1px 1px greenyellow;
+}
+
+.content {
+    width: 33%;
+    margin-left: 33%;
+}
+
+img {
+    width: 100%;
+    max-width: 650px;
+}

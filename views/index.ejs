@@ -1,0 +1,49 @@
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<table align="center" class="posts">
+    <tr>
+        <td>
+            <h1>804RD3110</h1>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="links">
+            <div>
+                <a href="/rules">[rules]</a>
+                <a href="/image-hosting">[image hosting]</a>
+                <a href="#">[chat]</a>
+                <a href="#">[radio]</a>
+                <a href="#">[philosophy]</a>
+                <a href="#">[kek]</a>
+            </div>
+        </td>
+    </tr>
+
+    <% for(var i=0; i<posts.length; i++) {%>
+        <tr>
+            <td class="post">
+                <b><span><%= posts[i].name %>:</span></b>
+                <br>
+                <% if (posts[i].image !== '') { %>
+                    <img src='<%= posts[i].image%>'>
+                    <br>
+                <% } %>
+                <span><%= posts[i].post %></span>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+
+<div class="form">
+    <form action="/posts" method="POST" id="postForm">
+        <input type="text" placeholder="name" name="name">
+        <br>
+        <input type="text" placeholder="image link" name="image">
+        <br>
+        <textarea rows="10" cols="50" name="post" form="postForm" placeholder="Text"></textarea>
+        <br>
+        <button id="submit" type="submit">Submit</button>
+    </form>
+</div>
