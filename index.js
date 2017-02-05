@@ -34,6 +34,22 @@ app.get('/image-hosting', function (req, res) {
     res.render('image-hosting.ejs')
 })
 
+app.get('/chat', function (req, res) {
+    res.render('chat.ejs')
+})
+
+app.get('/radio', function (req, res) {
+    res.render('radio.ejs')
+})
+
+app.get('/philosophy', function (req, res) {
+    res.render('philosophy.ejs')
+})
+
+app.get('/kek', function (req, res) {
+    res.render('kek.ejs')
+})
+
 app.post('/posts', (req, res) => {
     db.collection('posts').save(req.body, (err, result) => {
         if (err) return console.log(err)
