@@ -3,6 +3,14 @@
 
 <body>
 
+<script>
+    var socket = io.connect('localhost:8000');
+    socket.on('new_post', function () {
+        console.log('received new post message');
+        location.reload();
+    });
+</script>
+
 <table align="center" class="posts">
     <tr>
         <td>
