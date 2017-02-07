@@ -1,4 +1,14 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+
+<body>
+
+<script>
+    var socket = io.connect('http://localhost:5000');
+    socket.on('refresh_board', function() {
+        location.reload();
+    });
+</script>
 
 <table align="center" class="posts">
     <tr>
@@ -48,3 +58,5 @@
         <button id="submit" type="submit">Submit</button>
     </form>
 </div>
+
+</body>

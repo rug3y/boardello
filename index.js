@@ -3,7 +3,12 @@ const bodyParser = require('body-parser')
 const mongoClient = require('mongodb').MongoClient
 const path = require('path')
 require('dotenv').config()
-const app = express()
+
+// set up socket.io server
+const app = require('express')();
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+server.listen(5000);
 
 mongoClient.connect(process.env.MONGO_URI, (err, database) => {
     if (err) return console.log(err)
@@ -25,6 +30,8 @@ app.get('/', function (req, res) {
         // console.log(result)
     })
 })
+
+
 
 app.get('/rules', function (req, res) {
     res.render('rules.ejs')
@@ -55,6 +62,7 @@ app.post('/posts', (req, res) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.redirect('/')
+        io.emit('refresh_board')
     })
 })
 
