@@ -4,7 +4,7 @@
 <body>
 
 <script>
-    var socket = io.connect('http://localhost:5000');
+    var socket = io.connect(SOCKET);
     socket.on('refresh_board', function() {
         location.reload();
     });
