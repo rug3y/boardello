@@ -4,9 +4,9 @@
 <body>
 
 <script>
-    // SOCKET is an environment variable, make sure to set this correctly in production
-    var socket = io.connect(SOCKET);
-    socket.on('refresh_board', function() {
+    var socket = io.connect('localhost:8000');
+    socket.on('new_post', function () {
+        console.log('received new post message');
         location.reload();
     });
 </script>
